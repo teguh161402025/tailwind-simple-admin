@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../dist/output.css" rel="stylesheet">
+    <link href="animations.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Poppins");
+    </style>
+</head>
+
+<body class="bg-primary text-fontlight w-full p-8 overflow-y-hidden">
+    <!--navbar-->
+    <div class="flex flex-row justify-between">
+        <div class="text-banner">
+            <span class="font-extrabold text-2xl">Tailwind</span><span class="text-lg">dashboard.</span>
+        </div>
+
+        <div class="space-x-4">
+            <button class="p-2 bg-secondary rounded-full  h-10 space-x-4 px-4">
+                <div class="fa fa-envelope text-fontlight"></div>
+                <span class="text-sm font-semibold">Email Inbox</span>
+            </button>
+            <button class="p-2 bg-secondary rounded-full w-10 h-10">
+                <div class="fa fa-bell text-fontlight"></div>
+            </button>
+
+            <button class="p-2 bg-secondary rounded-full w-10 h-10">
+                <div class="fa fa-comment text-fontlight"></div>
+            </button>
+            <button class="p-2 bg-secondary rounded-full w-10 h-10">
+                <div class="fa fa-user text-fontlight"></div>
+            </button>
+
+        </div>
+    </div>
+    <!--navbar-->
+
+    <div class="w-full bg-secondary px-4 py-[10px] my-8 rounded-full flex justify-between">
+        <div class="font-semibold ">
+            <a>All Item<span class="fa fa-sort-down -translate-y-[4px] ml-2"></span>
+            </a>
+        </div>
+        <div class="bg-primary w-[25%] rounded-full   px-2 space-x-6 -translate-x-[60%]">
+            <span class="fa fa-search"></span>
+            <input class="bg-primary" placeholder="search..." />
+        </div>
+        <div class="flex flex-row space-x-6">
+            <div>
+                <span class="font-semibold text-sm">Option 1</span>
+                <span class="fa fa-ellipsis-v ml-2"></span>
+            </div>
+            <div>
+                <span class="font-semibold text-sm">Option 2</span>
+                <span class="fa fa-plus-square-o"></span>
+            </div>
+            <div>
+                <span class="font-semibold text-sm">Option 3</span>
+                <span class="fa fa-cog ml-2"></span>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="flex flex-row">
+        <!--sidebar-->
+        <div class="w-[25%]  bg-secondary rounded-xl h-[73vh] overflow-y-auto shadow-xl">
+            <div onclick="toggleMenu(this)" class="overflow-y-hidden m-2 ">
+                <div class="flex bg-primary px-4  space-x-4 rounded-lg justify-between cursor-pointer z-20 relative ">
+                    <div class="flex space-x-12">
+                        <div class="ml-2 m-2 mt-[10px] bg-banner p-[4px] px-[10px]  rounded-full text-lg text-primary">
+                            <span class="fa fa-th-large "></span>
+                        </div>
+                        <span class="text-md font-semibold pt-[15px] -translate-x-10 ">Dashboard</span>
+                    </div>
+                    <div class="text-xl py-2 mr-2">
+                        <span class="fa fa-caret-down"></span>
+                    </div>
+                </div>
+                <div
+                    class="bg-primary space-x-4 rounded-lg justify-around pt-6 cursor-pointer  overflow-y-hidden toogle-menu-sidebar -translate-y-4  max-h-0 z-10 relative">
+
+                    <ul class="mx-8 space-y-4 p-2 text-banner pl-12">
+                        <li>
+                            option 1
+                        </li>
+                        <li>
+                            option 2
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        <div onclick="toggleMenu(this)" class="overflow-y-hidden m-2">
+                <div class="flex bg-primary px-4  space-x-4 rounded-lg justify-between cursor-pointer z-20 relative ">
+                    <div class="flex space-x-12">
+                        <div class="ml-2 m-2 mt-[10px] bg-orange-400 p-[4px] px-[10px] rounded-full text-lg text-primary">
+                            <span class="fa fa-file-text "></span>
+                        </div>
+                        <span class="text-md font-semibold pt-[15px] -translate-x-10 ">Page</span>
+                    </div>
+                    <div class="text-xl py-2 mr-2">
+                        <span class="fa fa-caret-down"></span>
+                    </div>
+                </div>
+                <div
+                    class="bg-primary space-x-4 rounded-lg justify-around pt-6 cursor-pointer  overflow-y-hidden toogle-menu-sidebar -translate-y-4  max-h-0 z-10 relative">
+
+                    <ul class="mx-8 space-y-4 p-2 text-orange-400 pl-12">
+                        <li>
+                           Login
+                        </li>
+                        <li>
+                            Register
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+                <div onclick="toggleMenu(this)" class=" m-2">
+                <div class="flex bg-primary px-4  space-x-4 rounded-lg justify-between cursor-pointer z-20 relative ">
+                    <div class="flex space-x-12">
+                        <div class="ml-2 m-2 mt-[10px] bg-green-400 p-[4px] px-[10px] rounded-full text-lg text-primary">
+                            <span class="fa fa-th-list "></span>
+                        </div>
+                        <span class="text-md font-semibold pt-[15px] -translate-x-10 ">Application</span>
+                    </div>
+                    <div class="text-xl py-2 mr-2">
+                        <span class="fa fa-caret-down"></span>
+                    </div>
+                </div>
+                <div
+                    class="bg-primary space-x-4 rounded-lg justify-around pt-6 cursor-pointer  overflow-y-hidden toogle-menu-sidebar -translate-y-4  max-h-0 z-10 relative">
+
+                    <ul class="mx-8 space-y-4 p-2 text-green-400 pl-12">
+                        <li>
+                           Email Inbox
+                        </li>
+                        <li>
+                            Chat Panel
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+                <div onclick="toggleMenu(this)" class=" m-2">
+                <div class="flex bg-primary px-4  space-x-4 rounded-lg justify-between cursor-pointer z-20 relative ">
+                    <div class="flex space-x-12">
+                        <div class="ml-2 m-2 mt-[10px] bg-red-400 p-[4px] px-[10px] rounded-full text-lg text-primary">
+                            <span class="fa fa-database"></span>
+                        </div>
+                        <span class="text-md font-semibold pt-[15px] -translate-x-10 ">Forms</span>
+                    </div>
+                    <div class="text-xl py-2 mr-2">
+                        <span class="fa fa-caret-down"></span>
+                    </div>
+                </div>
+                <div
+                    class="bg-primary space-x-4 rounded-lg justify-around pt-6 cursor-pointer  overflow-y-hidden toogle-menu-sidebar -translate-y-4  max-h-0 z-10 relative">
+
+                    <ul class="mx-8 space-y-4 p-2 text-red-400 pl-12">
+                        <li>
+                           Table
+                        </li>
+                        <li>
+                            Input
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+            <!--sidebar-->
+
+            <div class="w-full pl-8 ">
+                <div class="bg-secondary max-h-[75vh] overflow-y-auto   rounded-lg">
+                    <div class="flex p-4 justify-between">
+                        <div class="w-1/5 bg-primary rounded-xl p-4 shadow-lg flex flex-col space-y-4">
+                           <span class="font-semibold text-banner text-md"> Total Income </span>
+                            <span class="font-bold text-banner text-4xl"> $ 579,000</span>
+                              <span class=" text-banner text-md"> Saved 25% </span>
+                        </div>
+                          <div class="w-1/5 bg-primary rounded-xl p-4 shadow-lg flex flex-col space-y-4">
+                           <span class="font-semibold text-green-400 text-md"> Total Expense </span>
+                            <span class="font-bold text-green-400 text-4xl"> $ 145,000</span>
+                              <span class=" text-green-400 text-md"> Saved 25% </span>
+                        </div>
+                          <div class="w-1/5 bg-primary rounded-xl p-4 shadow-lg flex flex-col space-y-4">
+                           <span class="font-semibold text-orange-400 text-md"> Cash on Hand </span>
+                            <span class="font-bold text-orange-400 text-4xl"> $ 65,000</span>
+                              <span class=" text-orange-400 text-md"> Saved 25% </span>
+                        </div>
+                          <div class="w-1/5 bg-primary rounded-xl p-4 shadow-lg flex flex-col space-y-4">
+                           <span class="font-semibold text-red-400 text-md"> Net Profit Margin </span>
+                            <span class="font-bold text-red-400 text-4xl"> $ 200,000</span>
+                              <span class=" text-red-400 text-md"> Saved 25% </span>
+                        </div>
+                    </div>
+                <div class="grid grid-cols-3 gap-4 w-full p-2 mt-12">
+
+                   <div class="bg-primary rounded-lg p-4 flex flex-col col-span-2">
+                       <span class="text-xl font-semibold">AP and AR Balance</span>
+                       <span class="text-sm text-banner mb-2">Avg. $5,309</span>
+                        <canvas id="myBarChart"></canvas>
+                    </div>
+                      <div  class="bg-primary rounded-lg p-4 flex flex-col py-16">
+                        <canvas id="myDonutChart"></canvas>
+                    </div>
+
+                </div>
+                </div>
+
+             
+
+            </div>
+    </div>
+</body>
+<script>
+    function toggleMenu(element) {
+        const toggle = element.querySelector('.toogle-menu-sidebar');
+        const show = toggle.classList.contains('max-h-0');
+
+        if (show) {
+            toggle.classList.remove('max-h-0');
+            toggle.classList.add('max-h-[500px]');
+            toggle.classList.add('slide-down');
+        } else {
+            toggle.classList.add('max-h-0');
+            toggle.classList.remove('max-h-[500px]');
+            toggle.classList.remove('slide-down');
+        }
+    }
+</script>
+
+<script>
+   
+  var dataPenjualan = {
+  labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"],
+  datasets: [
+    {
+      label: "Profit",
+      backgroundColor: [
+        "rgba(255, 99, 132, 0.7)",
+        "rgba(54, 162, 235, 0.7)",
+        "rgba(255, 206, 86, 0.7)",
+        "rgba(75, 192, 192, 0.7)",
+        "rgba(153, 102, 255, 0.7)",
+        "rgba(255, 159, 64, 0.7)",
+        "rgba(255, 99, 132, 0.7)",
+        "rgba(54, 162, 235, 0.7)",
+        "rgba(255, 206, 86, 0.7)",
+        "rgba(75, 192, 192, 0.7)",
+        "rgba(153, 102, 255, 0.7)",
+        "rgba(255, 159, 64, 0.7)"
+      ],
+      borderColor: [
+        "rgba(255, 99, 132, 1)",
+        "rgba(54, 162, 235, 1)",
+        "rgba(255, 206, 86, 1)",
+        "rgba(75, 192, 192, 1)",
+        "rgba(153, 102, 255, 1)",
+        "rgba(255, 159, 64, 1)",
+        "rgba(255, 99, 132, 1)",
+        "rgba(54, 162, 235, 1)",
+        "rgba(255, 206, 86, 1)",
+        "rgba(75, 192, 192, 1)",
+        "rgba(153, 102, 255, 1)",
+        "rgba(255, 159, 64, 1)"
+      ],
+      borderWidth: 1,
+      data: [50, 70, 30, 100, 45, 80, 60, 95, 75, 120, 90, 110],
+    },
+  ],
+};
+    var config = {
+      type: "bar",
+      data: dataPenjualan,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    };
+
+   
+    var ctx = document.getElementById("myBarChart").getContext("2d");
+    var myBarChart = new Chart(ctx, config);
+  </script>
+ <script>
+    
+    var dataPersentaseAnggaran = {
+      labels: ["Housing", "Transportation", "Food", "Savings", "Entertainment"],
+      datasets: [
+        {
+          data: [30, 15, 20, 25, 10],
+          backgroundColor: ["#FF5733", "#FFAB33", "#FFC133", "#FFDB33", "#FFE633"],
+        },
+      ],
+    };
+
+    var config = {
+      type: "doughnut",
+      data: dataPersentaseAnggaran,
+    };
+
+   
+    var ctx = document.getElementById("myDonutChart").getContext("2d");
+    var myDonutChart = new Chart(ctx, config);
+  </script>
+</html>
